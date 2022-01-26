@@ -63,9 +63,9 @@ const routes = [
     path: '/wallets',
     name: 'wallets',
     component: () => import('@/views/wallet/Wallets.vue'),
-    meta: {
-      auth: true,
-    },
+    // meta: {
+    //   auth: true,
+    // },
   },
   {
     path: '/transfers',

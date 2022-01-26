@@ -123,8 +123,6 @@ export default {
         this.accountSettingData.account.email = resp.data.email
         this.accountSettingData.account.role = resp.data.status
         this.accountSettingData.account.status = resp.data.name
-        console.log(resp)
-        console.log(this.accountSettingData.account)
       })
   },
 }

@@ -207,12 +207,9 @@ export default {
   methods: {
     async login() {
       try {
-        console.log('password is')
-        console.log(this.user.username, this.user.password)
         const resp = await axiosService.login(this.user)
           // eslint-disable-next-line no-shadow
           .catch(resp => {
-            console.log(resp)
             if (resp.response.status === 500) {
               this.message.text = 'Bad credentials'
               this.message.description = 'Your username or password is incorrect'
@@ -223,9 +220,7 @@ export default {
               this.error = false
             }
           })
-        console.log(resp)
         localStorage.setItem('token', resp.data.token)
-        console.log('Success')
         await this.$router.push('/')
       } catch (ex) {
         console.log(`error:${ex}`)

@@ -28,6 +28,12 @@ class AxiosService {
     return this.api.get(`/users/token/${localStorage.getItem('token')}`, { headers: { Authorization: `Bearer ${token}` } })
   }
 
+  async getUserWallets() {
+    const token = localStorage.getItem('token')
+
+    return this.api.get(`wallets/users/token/${localStorage.getItem('token')}`, { headers: { Authorization: `Bearer ${token}` } })
+  }
+
   async editAccountDetails(username, fio, email, status) {
     return this.api.post('/account-settings', {
       username,
